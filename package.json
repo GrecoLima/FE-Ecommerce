@@ -27,7 +27,10 @@
     "zone.js": "~0.10.2",
     "jquery": "^3.4.0",
     "datatables.net-dt": "^1.10.19",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "compass-mixins": "^0.12.10",
+    "@mdi/font": "^5.7.55",
+    "@ng-bootstrap/ng-bootstrap": "^8.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.2",

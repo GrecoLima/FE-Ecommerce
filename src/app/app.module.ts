@@ -11,10 +11,18 @@ import { AddSellerComponent } from './add-seller/add-seller.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from './services/product.service';
 import { AddProductComponent } from './add-product/add-product.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
+    SidebarComponent,
+    FooterComponent,
+    SpinnerComponent,
     SellerListComponent,
     AddSellerComponent,
     ProductListComponent,
