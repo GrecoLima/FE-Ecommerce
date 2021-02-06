@@ -15,6 +15,11 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './user-pages/login/login.component'
+import { RestapiService } from './restapi.service';
+
+
 
 @NgModule({
   declarations: [
@@ -27,6 +32,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     AddSellerComponent,
     ProductListComponent,
     AddProductComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +40,10 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    NgbModule
   ],
-  providers: [SellerService, ProductService],
+  providers: [SellerService, ProductService,RestapiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
