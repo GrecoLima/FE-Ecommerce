@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from "../../shared/services/auth.service";
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ export class NavbarComponent implements OnInit {
   public iconOnlyToggled = false;
   public sidebarToggled = false;
   
-  constructor(config: NgbDropdownConfig) {
+  constructor( public authService: AuthService,config: NgbDropdownConfig) {
     config.placement = 'bottom-right';
   }
 

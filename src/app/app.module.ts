@@ -16,8 +16,22 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LoginComponent } from './user-pages/login/login.component'
-import { RestapiService } from './restapi.service';
+
+// App components
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+
+// Firebase services + enviorment module
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
+// Auth service
+import { AuthService } from "./shared/services/auth.service";
 
 
 
@@ -32,7 +46,12 @@ import { RestapiService } from './restapi.service';
     AddSellerComponent,
     ProductListComponent,
     AddProductComponent,
-    LoginComponent,
+    SignInComponent,
+    SignUpComponent,
+    DashboardComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -41,9 +60,12 @@ import { RestapiService } from './restapi.service';
     ReactiveFormsModule,
     HttpClientModule,
     DataTablesModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
-  providers: [SellerService, ProductService,RestapiService],
+  providers: [SellerService, ProductService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

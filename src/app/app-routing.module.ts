@@ -4,21 +4,27 @@ import { SellerListComponent } from './seller-list/seller-list.component';
 import { AddSellerComponent } from './add-seller/add-seller.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AddProductComponent } from './add-product/add-product.component';
-import { LoginComponent } from './user-pages/login/login.component'
-import { RegisterComponent } from './user-pages/register/register.component'
 
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+
+import { AuthGuard } from "./shared/guard/auth.guard";
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: 'view-sellers', component: SellerListComponent },
-  { path: 'add-seller', component: AddSellerComponent },
-  { path: 'view-products', component: ProductListComponent },
-  { path: 'add-product', component: AddProductComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-
-
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
+  { path: 'view-sellers', component: SellerListComponent,  canActivate: [AuthGuard]},
+  { path: 'add-seller', component: AddSellerComponent, canActivate: [AuthGuard]},
+  { path: 'view-products', component: ProductListComponent,canActivate: [AuthGuard]},
+  { path: 'add-product', component: AddProductComponent,canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'sign-in', component: SignInComponent},
+  { path: 'register-user', component: SignUpComponent},
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent }
 ];
 
 @NgModule({
