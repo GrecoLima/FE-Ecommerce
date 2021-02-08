@@ -27,6 +27,7 @@
     "bootstrap": "^4.6.0",
     "compass-mixins": "^0.12.10",
     "datatables.net-dt": "^1.10.19",
+    "express": "^4.17.1",
     "firebase": "^7.21.0",
     "flx-ui-datatable": "^1.1.5",
     "font-awesome": "^4.7.0",
